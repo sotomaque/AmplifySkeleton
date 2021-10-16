@@ -112,4 +112,18 @@ final class SessionManager: ObservableObject {
             }
         }
     }
+    
+    func signOut() {
+        _ = Amplify.Auth.signOut { [weak self] result in
+            switch result {
+                case .success:
+                    DispatchQueue.main.async {
+                        self?.getCurrentAuthUser()
+                    }
+                    
+                case .failure(let error):
+                    print("Sign out error: ", error)
+            }
+        }
+    }
 }

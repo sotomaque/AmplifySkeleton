@@ -17,6 +17,7 @@ struct AmplifySkeletonApp: App {
     
     init() {
         configureAmplify()
+        sessionManager.getCurrentAuthUser()
     }
     
     var body: some Scene {
