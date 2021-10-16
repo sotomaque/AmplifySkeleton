@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ConfirmationView: View {
     
+    @EnvironmentObject var sessionManager: SessionManager
+
     let username: String
     
     @State private var confirmationCode = ""
@@ -17,7 +19,9 @@ struct ConfirmationView: View {
         VStack {
             Text("Username: \(username)")
             TextField("Confirmation Code", text: $confirmationCode)
-            Button("Confirm", action: {})
+            Button("Confirm", action: {
+                sessionManager.confirm(username: username, code: confirmationCode)
+            })
         }
         .padding()
     }

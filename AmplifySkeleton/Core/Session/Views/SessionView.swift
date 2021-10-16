@@ -6,8 +6,14 @@
 //
 
 import SwiftUI
+import Amplify
 
 struct SessionView: View {
+    
+    @EnvironmentObject var sessionManager: SessionManager
+    
+    let user: AuthUser
+    
     var body: some View {
         VStack {
             Spacer()
@@ -22,7 +28,12 @@ struct SessionView: View {
 }
 
 struct SessionView_Previews: PreviewProvider {
-    static var previews: some View {
-        SessionView()
+    private struct DummyUser: AuthUser {
+        let userId: String = "1"
+        let username: String = "dummy"
+    }
+    
+    static var previews: some View {        
+        SessionView(user: DummyUser())
     }
 }

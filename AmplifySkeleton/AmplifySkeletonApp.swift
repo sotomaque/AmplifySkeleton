@@ -13,13 +13,34 @@ import AWSCognitoAuthPlugin
 @main
 struct AmplifySkeletonApp: App {
     
+    @ObservedObject var sessionManager = SessionManager()
+    
     init() {
         configureAmplify()
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            switch sessionManager.authState {
+                case .login:
+                    LoginView()
+                    .environmentObject(sessionManager)
+                    
+                case.signup:
+                    SignUpView()
+                    .environmentObject(sessionManager)
+
+                    
+                case.confirmCode(let username):
+                    ConfirmationView(username: username)
+                    .environmentObject(sessionManager)
+
+                    
+                case.session(let user):
+                    SessionView(user: user)
+                    .environmentObject(sessionManager)
+
+            }
         }
     }
     

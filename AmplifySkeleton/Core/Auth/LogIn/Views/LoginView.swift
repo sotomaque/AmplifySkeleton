@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @EnvironmentObject var sessionManager: SessionManager
+    
     @State private var username = ""
     @State private var password = ""
     
@@ -17,11 +19,15 @@ struct LoginView: View {
             Spacer()
             
             TextField("Username", text: $username)
-            TextField("Password", text: $password)
-            Button("Login", action: {})
+            SecureField("Password", text: $password)
+            Button("Login", action: {
+                sessionManager.login(username: username, password: password)
+            })
             
             Spacer()
-            Button("Don't have an account? Sign up.", action: {})
+            Button("Don't have an account? Sign up.", action: {
+                sessionManager.showSignUp()
+            })
         }
         .padding()
     }
