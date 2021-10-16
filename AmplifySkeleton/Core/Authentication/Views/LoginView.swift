@@ -2,7 +2,7 @@
 //  LoginView.swift
 //  CryptoTracker
 //
-//  Created by Enrique Sotomayor on 9/28/21.
+//  Created by Enrique Sotomayor on 10/15/21.
 //
 
 import SwiftUI
@@ -122,7 +122,7 @@ extension LoginView {
         }
     }
     
-    // Auht0 Login
+    // AWS Login
     private var signIn: some View {
             Text("Sign In")
                 .fontWeight(.semibold)
@@ -134,6 +134,7 @@ extension LoginView {
                 .padding(.vertical, 8)
                 .onTapGesture {
                     withAnimation(.easeInOut) {
+                        // vm.login
                         sessionManager.login(username: username, password: password)
                     }
                 }

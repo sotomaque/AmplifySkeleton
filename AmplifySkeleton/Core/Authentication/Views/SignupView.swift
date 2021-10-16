@@ -128,7 +128,6 @@ extension SignupView {
         HStack {
             Text("Already have an account?")
                 .foregroundColor(.gray)
-            
             Button {
                 sessionManager.showLogin()
             } label: {

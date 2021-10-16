@@ -23,6 +23,10 @@ struct AmplifySkeletonApp: App {
     var body: some Scene {
         WindowGroup {
             switch sessionManager.authState {
+            case .onboarding:
+                OnboardingView()
+                    .environmentObject(sessionManager)
+
                 case .login:
                     LoginView()
                     .environmentObject(sessionManager)

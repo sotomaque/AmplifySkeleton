@@ -10,25 +10,25 @@ import Combine
 import SwiftUI
 
 enum AuthState {
+    case onboarding // default
     case signup
     case login
     case confirmCode(username: String)
     case session(user: AuthUser)
 }
 
-
 final class SessionManager: ObservableObject {
     @Published var authState: AuthState = .login
     
     // check if logged in or not
     // if logged in -> session
-    // else login screen
+    // else onboarding screen
     
     func getCurrentAuthUser() {
         if let user = Amplify.Auth.getCurrentUser() {
             authState = .session(user: user)
         } else {
-            authState = .login
+            authState = .onboarding
         }
     }
     
