@@ -12,7 +12,7 @@ struct LoginView: View {
     
     @EnvironmentObject var sessionManager: SessionManager
 
-    @State private var email: String = ""
+    @State private var username: String = ""
     @State private var password: String = ""
         
     
@@ -36,7 +36,7 @@ struct LoginView: View {
     private var loginForm: some View {
         Group {
             ZStack(alignment: .trailing) {
-                TextField("Email Address", text: $email)
+                TextField("Username", text: $username)
                     .frame(height: 50)
                 if (getBiometricsStatus()) {
                     Image(systemName: LAContext().biometryType == .faceID ? "faceid" : "touchid")
@@ -47,7 +47,7 @@ struct LoginView: View {
             }
             Divider()
             ZStack(alignment: .trailing) {
-                TextField("Password", text: $email)
+                SecureField("Password", text: $password)
                     .frame(height: 50)
                 
                 Text("Forgot Password?")
@@ -134,8 +134,7 @@ extension LoginView {
                 .padding(.vertical, 8)
                 .onTapGesture {
                     withAnimation(.easeInOut) {
-//                        vm.handleLogin()
-                        print("hi")
+                        sessionManager.login(username: username, password: password)
                     }
                 }
     }

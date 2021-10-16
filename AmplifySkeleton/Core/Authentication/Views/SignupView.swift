@@ -2,7 +2,7 @@
 //  SignupView.swift
 //  CryptoTracker
 //
-//  Created by Enrique Sotomayor on 9/28/21.
+//  Created by Enrique Sotomayor on 10/15/21.
 //
 
 import SwiftUI
@@ -11,10 +11,12 @@ struct SignupView: View {
     
     @EnvironmentObject var sessionManager: SessionManager
 
-    @State private var name: String = ""
+    @State private var name: String = "" // do something locally with it? or dont require it? or change aws config for it?
+    
     @State private var email: String = ""
     @State private var username: String = ""
     @State private var password: String = ""
+    
     @State var termsAgreed: Bool = false
 
     
@@ -27,6 +29,10 @@ struct SignupView: View {
             .padding(.horizontal)
             
             signUp
+                .onTapGesture {
+                    // vm.handleSignUp
+                    sessionManager.signUp(username: username, email: email, password: password)
+                }
             signIn
             .padding(.vertical, 4)
             
@@ -49,7 +55,7 @@ struct SignupView: View {
                 .frame(height: 50)
             Divider()
             
-            TextField("Password", text: $email)
+            SecureField("Password", text: $password)
                 .frame(height: 50)
             Divider()
             
