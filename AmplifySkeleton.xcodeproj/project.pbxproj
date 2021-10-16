@@ -11,6 +11,14 @@
 		34BA23AC271A8DAC00765209 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23AB271A8DAC00765209 /* ContentView.swift */; };
 		34BA23AE271A8DAE00765209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BA23AD271A8DAE00765209 /* Assets.xcassets */; };
 		34BA23B1271A8DAE00765209 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BA23B0271A8DAE00765209 /* Preview Assets.xcassets */; };
+		34BA23B8271A8DC300765209 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23B7271A8DC300765209 /* SignUpView.swift */; };
+		34BA23BA271A8F4100765209 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23B9271A8F4100765209 /* ConfirmationView.swift */; };
+		34BA23BC271A8FB000765209 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23BB271A8FB000765209 /* LoginView.swift */; };
+		34BA23CD271A909300765209 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23CC271A909300765209 /* SessionView.swift */; };
+		34BA23D0271A912C00765209 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 34BA23CF271A912C00765209 /* AWSCognitoAuthPlugin */; };
+		34BA23D2271A912C00765209 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 34BA23D1271A912C00765209 /* Amplify */; };
+		38791AF60FE5812D30BB4A54 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D548B54CD3C7E01CADD8091F /* amplifyconfiguration.json */; };
+		641C207E0689440074E79FB3 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E98BB46EEE6B062BE28912A8 /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,12 @@
 		34BA23AB271A8DAC00765209 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34BA23AD271A8DAE00765209 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34BA23B0271A8DAE00765209 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34BA23B7271A8DC300765209 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		34BA23B9271A8F4100765209 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		34BA23BB271A8FB000765209 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		34BA23CC271A909300765209 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		D548B54CD3C7E01CADD8091F /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		E98BB46EEE6B062BE28912A8 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = awsconfiguration.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BA23D0271A912C00765209 /* AWSCognitoAuthPlugin in Frameworks */,
+				34BA23D2271A912C00765209 /* Amplify in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +53,7 @@
 			children = (
 				34BA23A8271A8DAC00765209 /* AmplifySkeleton */,
 				34BA23A7271A8DAC00765209 /* Products */,
+				DA9E60C4665520EAEA69736B /* AmplifyConfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +68,7 @@
 		34BA23A8271A8DAC00765209 /* AmplifySkeleton */ = {
 			isa = PBXGroup;
 			children = (
+				34BA23BD271A8FFC00765209 /* Core */,
 				34BA23A9271A8DAC00765209 /* AmplifySkeletonApp.swift */,
 				34BA23AB271A8DAC00765209 /* ContentView.swift */,
 				34BA23AD271A8DAE00765209 /* Assets.xcassets */,
@@ -65,6 +83,122 @@
 				34BA23B0271A8DAE00765209 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		34BA23BD271A8FFC00765209 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23C9271A908000765209 /* Session */,
+				34BA23BE271A900400765209 /* Auth */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		34BA23BE271A900400765209 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23C6271A905400765209 /* Confirmation */,
+				34BA23C3271A903700765209 /* LogIn */,
+				34BA23BF271A900A00765209 /* SignUp */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		34BA23BF271A900A00765209 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23C2271A902A00765209 /* ViewModels */,
+				34BA23C0271A901100765209 /* Views */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		34BA23C0271A901100765209 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23B7271A8DC300765209 /* SignUpView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34BA23C2271A902A00765209 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		34BA23C3271A903700765209 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23C4271A903D00765209 /* ViewModels */,
+				34BA23C5271A904500765209 /* Views */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		34BA23C4271A903D00765209 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		34BA23C5271A904500765209 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23BB271A8FB000765209 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34BA23C6271A905400765209 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23C8271A905F00765209 /* ViewModels */,
+				34BA23C7271A905A00765209 /* Views */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
+		34BA23C7271A905A00765209 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23B9271A8F4100765209 /* ConfirmationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34BA23C8271A905F00765209 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		34BA23C9271A908000765209 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23CA271A908600765209 /* Views */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		34BA23CA271A908600765209 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23CC271A909300765209 /* SessionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DA9E60C4665520EAEA69736B /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				E98BB46EEE6B062BE28912A8 /* awsconfiguration.json */,
+				D548B54CD3C7E01CADD8091F /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +217,10 @@
 			dependencies = (
 			);
 			name = AmplifySkeleton;
+			packageProductDependencies = (
+				34BA23CF271A912C00765209 /* AWSCognitoAuthPlugin */,
+				34BA23D1271A912C00765209 /* Amplify */,
+			);
 			productName = AmplifySkeleton;
 			productReference = 34BA23A6271A8DAC00765209 /* AmplifySkeleton.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +249,9 @@
 				Base,
 			);
 			mainGroup = 34BA239D271A8DAC00765209;
+			packageReferences = (
+				34BA23CE271A912C00765209 /* XCRemoteSwiftPackageReference "amplify-ios" */,
+			);
 			productRefGroup = 34BA23A7271A8DAC00765209 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +268,8 @@
 			files = (
 				34BA23B1271A8DAE00765209 /* Preview Assets.xcassets in Resources */,
 				34BA23AE271A8DAE00765209 /* Assets.xcassets in Resources */,
+				641C207E0689440074E79FB3 /* awsconfiguration.json in Resources */,
+				38791AF60FE5812D30BB4A54 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BA23AC271A8DAC00765209 /* ContentView.swift in Sources */,
+				34BA23CD271A909300765209 /* SessionView.swift in Sources */,
+				34BA23BA271A8F4100765209 /* ConfirmationView.swift in Sources */,
+				34BA23B8271A8DC300765209 /* SignUpView.swift in Sources */,
+				34BA23BC271A8FB000765209 /* LoginView.swift in Sources */,
 				34BA23AA271A8DAC00765209 /* AmplifySkeletonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +490,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34BA23CE271A912C00765209 /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34BA23CF271A912C00765209 /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34BA23CE271A912C00765209 /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSCognitoAuthPlugin;
+		};
+		34BA23D1271A912C00765209 /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34BA23CE271A912C00765209 /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = Amplify;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 34BA239E271A8DAC00765209 /* Project object */;
 }
