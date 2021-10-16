@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  LogInView.swift
 //  AmplifySkeleton
 //
 //  Created by Enrique Sotomayor on 10/15/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct LogInView: View {
     
     @EnvironmentObject var sessionManager: SessionManager
     
@@ -33,8 +33,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LogInView()
     }
 }

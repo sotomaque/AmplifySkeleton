@@ -28,7 +28,7 @@ struct AmplifySkeletonApp: App {
                     .environmentObject(sessionManager)
                     
                 case.signup:
-                    SignUpView()
+                    SignupView()
                     .environmentObject(sessionManager)
 
                     

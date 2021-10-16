@@ -12,11 +12,15 @@
 		34BA23B1271A8DAE00765209 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BA23B0271A8DAE00765209 /* Preview Assets.xcassets */; };
 		34BA23B8271A8DC300765209 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23B7271A8DC300765209 /* SignUpView.swift */; };
 		34BA23BA271A8F4100765209 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23B9271A8F4100765209 /* ConfirmationView.swift */; };
-		34BA23BC271A8FB000765209 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23BB271A8FB000765209 /* LoginView.swift */; };
+		34BA23BC271A8FB000765209 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23BB271A8FB000765209 /* LogInView.swift */; };
 		34BA23CD271A909300765209 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23CC271A909300765209 /* SessionView.swift */; };
 		34BA23D0271A912C00765209 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 34BA23CF271A912C00765209 /* AWSCognitoAuthPlugin */; };
 		34BA23D2271A912C00765209 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 34BA23D1271A912C00765209 /* Amplify */; };
 		34BA23D4271A99F600765209 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23D3271A99F500765209 /* SessionManager.swift */; };
+		34BA23DB271AA92C00765209 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23D7271AA92C00765209 /* LoginViewModel.swift */; };
+		34BA23DC271AA92C00765209 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23D9271AA92C00765209 /* LoginView.swift */; };
+		34BA23DD271AA92C00765209 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23DA271AA92C00765209 /* SignupView.swift */; };
+		34BA23E0271AA9D200765209 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA23DF271AA9D200765209 /* View.swift */; };
 		38791AF60FE5812D30BB4A54 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D548B54CD3C7E01CADD8091F /* amplifyconfiguration.json */; };
 		641C207E0689440074E79FB3 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E98BB46EEE6B062BE28912A8 /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
@@ -28,9 +32,13 @@
 		34BA23B0271A8DAE00765209 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34BA23B7271A8DC300765209 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		34BA23B9271A8F4100765209 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
-		34BA23BB271A8FB000765209 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		34BA23BB271A8FB000765209 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		34BA23CC271A909300765209 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		34BA23D3271A99F500765209 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		34BA23D7271AA92C00765209 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		34BA23D9271AA92C00765209 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		34BA23DA271AA92C00765209 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		34BA23DF271AA9D200765209 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D548B54CD3C7E01CADD8091F /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		E98BB46EEE6B062BE28912A8 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +76,7 @@
 		34BA23A8271A8DAC00765209 /* AmplifySkeleton */ = {
 			isa = PBXGroup;
 			children = (
+				34BA23DE271AA9C300765209 /* Extensions */,
 				34BA23BD271A8FFC00765209 /* Core */,
 				34BA23A9271A8DAC00765209 /* AmplifySkeletonApp.swift */,
 				34BA23D3271A99F500765209 /* SessionManager.swift */,
@@ -88,6 +97,7 @@
 		34BA23BD271A8FFC00765209 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				34BA23D5271AA92C00765209 /* Authentication */,
 				34BA23C9271A908000765209 /* Session */,
 				34BA23BE271A900400765209 /* Auth */,
 			);
@@ -147,7 +157,7 @@
 		34BA23C5271A904500765209 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				34BA23BB271A8FB000765209 /* LoginView.swift */,
+				34BA23BB271A8FB000765209 /* LogInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +200,40 @@
 				34BA23CC271A909300765209 /* SessionView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		34BA23D5271AA92C00765209 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23D6271AA92C00765209 /* ViewModels */,
+				34BA23D8271AA92C00765209 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		34BA23D6271AA92C00765209 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23D7271AA92C00765209 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		34BA23D8271AA92C00765209 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23D9271AA92C00765209 /* LoginView.swift */,
+				34BA23DA271AA92C00765209 /* SignupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34BA23DE271AA9C300765209 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34BA23DF271AA9D200765209 /* View.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DA9E60C4665520EAEA69736B /* AmplifyConfig */ = {
@@ -280,12 +324,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BA23DD271AA92C00765209 /* SignupView.swift in Sources */,
 				34BA23CD271A909300765209 /* SessionView.swift in Sources */,
+				34BA23E0271AA9D200765209 /* View.swift in Sources */,
 				34BA23BA271A8F4100765209 /* ConfirmationView.swift in Sources */,
 				34BA23B8271A8DC300765209 /* SignUpView.swift in Sources */,
-				34BA23BC271A8FB000765209 /* LoginView.swift in Sources */,
+				34BA23BC271A8FB000765209 /* LogInView.swift in Sources */,
 				34BA23AA271A8DAC00765209 /* AmplifySkeletonApp.swift in Sources */,
 				34BA23D4271A99F600765209 /* SessionManager.swift in Sources */,
+				34BA23DC271AA92C00765209 /* LoginView.swift in Sources */,
+				34BA23DB271AA92C00765209 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +472,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +502,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
